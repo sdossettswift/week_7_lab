@@ -1,28 +1,34 @@
 class Api::PostsController < ApplicationController
 
 def index
+  @posts = Post.all
 end
 
 def show
+  @post =Post.find_by id: params[:id]
 end
 
 def create
+  @post = Post.new params.require(:title)
+  if @post.save
+    render :show
+  else
+    render json: @post.errors, status: 422
+  end
 end
 
 def update
+  @post = Post.find_by id: params[:id]
+  if @post.update params.require(:title)
+    render :show
+  else
+    render json: @post.errors, status 422
+  end
 end
 
 def delete
+  @post =Post.find_by id: params[:id]
+  @post.destory
+  head :ok
 end
-
 end
-
-#
-#   namespace
-#   GE/api/posts to return all posts
-#   GET /api/posts/:id gives details of a post
-#   POST /api/posts creates a post
-#   PUT /api/posts/:id updates a post
-#   PATCH /api/posts/:id updates a post
-#   DELETE /api/posts/:id deletes a post
-# end
