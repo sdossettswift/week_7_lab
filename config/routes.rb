@@ -8,6 +8,8 @@ Rails.application.routes.draw do
     put 'posts/:id' => 'posts#update'
     delete 'posts/:id' => 'posts#delete'
     post "registrations" => 'registrations#create'
+    post "users" => 'registrations#create'
+
   end
 
 end
