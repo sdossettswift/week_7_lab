@@ -9,7 +9,7 @@ Rails.application.routes.draw do
     delete 'posts/:id' => 'posts#delete'
     post "registrations" => 'registrations#create'
     post "users" => 'registrations#create'
-
+    delete "users/:id" => 'users#delete'
   end
 
 end

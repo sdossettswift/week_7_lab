@@ -12,7 +12,6 @@ class Api::UsersController < ApplicationController
     @user = current_resource_owner
     @user.destroy
     head :ok
-
   end
 
 private

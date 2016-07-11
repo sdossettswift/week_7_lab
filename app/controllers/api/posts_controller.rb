@@ -34,6 +34,5 @@ end
 def delete
   @post =Post.find_by id: params[:id]
   @post.destory
-  head :ok
 end
 end
