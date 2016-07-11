@@ -23,7 +23,7 @@ def update
   if @post.update params.require(:title)
     render :show
   else
-    render json: @post.errors, status 422
+    render json: @post.errors, status: 422
   end
 end
 

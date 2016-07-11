@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     patch 'posts/:id' => 'posts#update'
     put 'posts/:id' => 'posts#update'
     delete 'posts/:id' => 'posts#delete'
+    post "registrations" => 'registrations#create'
   end
 
 end
